@@ -72,6 +72,22 @@ const server = http.createServer((req, res) => {
     return res.end("Automação Cresça rodando ✅");
   }
 
+  if (url.pathname === "/privacidade") {
+    res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+    return res.end(`<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Política de Privacidade — Cresça na Internet</title>
+<body style="font-family:system-ui;max-width:700px;margin:40px auto;padding:0 16px;line-height:1.6">
+<h1>Política de Privacidade</h1>
+<p>Este app (Automação Cresça) é usado pelo perfil <b>@pierreseffair</b> para responder automaticamente, por mensagem direta, pessoas que comentam em suas publicações no Instagram.</p>
+<h2>Dados usados</h2>
+<p>Usamos apenas o nome de usuário, o ID e o texto do comentário enviados pelo Instagram, somente para enviar a resposta solicitada. Não vendemos nem compartilhamos esses dados com terceiros.</p>
+<h2>Armazenamento</h2>
+<p>Os dados não são armazenados de forma permanente; ficam apenas temporariamente na memória do servidor para evitar respostas duplicadas.</p>
+<h2>Exclusão de dados</h2>
+<p>Para pedir a exclusão de qualquer dado, envie uma mensagem direta para @pierreseffair no Instagram.</p>
+</body>`);
+  }
+
   if (url.pathname !== "/webhook") {
     res.writeHead(404);
     return res.end();
