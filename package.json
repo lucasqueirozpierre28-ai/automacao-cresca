@@ -1,0 +1,12 @@
+{
+  "name": "automacao-cresca",
+  "version": "1.0.0",
+  "description": "Comentou EU QUERO no Instagram -> recebe direct",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
